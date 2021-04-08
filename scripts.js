@@ -31,6 +31,8 @@ request.onload = function () {
         const h1 = document.createElement('h1')
         h1.textContent = data.timeZoneName
 
+        var myDate = new Date(data.currentDateTime);
+
         //Create the card body
         const body = document.createElement('p')
         body.setAttribute('style', 'white-space: pre;')
@@ -39,6 +41,7 @@ request.onload = function () {
         body.textContent += `Ordinal Date: ${data.ordinalDate} \r\n`
         body.textContent += `Current File Time: ${data.currentFileTime} \r\n`
         body.textContent += `UTC Offset: ${data.utcOffset} \r\n`
+        body.textContent += `\r\nDate in my Time Zone: ${myDate} \r\n`
 
         card.appendChild(h1)
         card.appendChild(body)
